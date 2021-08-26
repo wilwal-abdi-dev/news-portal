@@ -99,38 +99,6 @@ public class App {
             return gson.toJson(employeesDao.getAllEmployees());
         });
 
-        //post:Add a department to a user
-//        post("employees/employeeId/department/:departmentId","application/json",(request, response) -> {
-//            int emplyeeId = Integer.parseInt(request.params("employeeId"));
-//            int departmentId = Integer.parseInt(request.params("departmentId"));
-//            Employees employeesFound = employeesDao.findById(emplyeeId);
-//            Department departmentfound = departmentDao.findById(departmentId);
-//
-//            if (departmentfound != null && employeesFound != null){
-//                departmentDao.addDepartmentToEmployees(departmentfound,employeesFound);
-//                response.type("application/json");
-//                response.status(201);
-//                return gson.toJson("Employees and Department have been associated");
-//            }
-//            else {
-//                throw new ApiException(404, "Employee or Department does not exist");
-//            }
-//        });
-//
-//        //get:View all departments a user belongs to
-//
-//        get("/employees/:employeeId/department","application/json",(request, response) -> {
-//            int employeeId = Integer.parseInt(request.params("employeeId"));
-//            Employees employees = employeesDao.findById(employeeId);
-//
-//            if (employees == null){
-//                throw new Exception("No Employee with that id");
-//            }else if(employeesDao.getAllDepartmentsForEmployee(employeeId).size() == 0){
-//                return "{\"message\":\"Employee not associated with any department\"}";
-//            }else {
-//                return gson.toJson(employeesDao.getAllDepartmentsForEmployee(employeeId));
-//            }
-//        });
 
         exception(ApiException.class, (exception, request, response) -> {
             ApiException err = exception;
