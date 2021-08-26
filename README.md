@@ -8,7 +8,7 @@
 
 ###  marking Schema
 ### SET MODE PostgreSQL;
-* CREATE DATABASE newsapi
+* CREATE DATABASE newsapi;
  
 
 *  \c newsapi
